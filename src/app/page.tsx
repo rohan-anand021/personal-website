@@ -15,9 +15,10 @@ export default function HomePage() {
           About Me
         </h2>
         <p className="text-gray-700 leading-relaxed">
-          Hello! I'm a passionate developer based in [Your City]. I specialize
-          in creating modern, responsive, and user-friendly web applications.
-          When I'm not coding, I enjoy [Your Hobby 1] and [Your Hobby 2].
+          Hello! I&apos;m a passionate developer based in [Your City]. I
+          specialize in creating modern, responsive, and user-friendly web
+          applications. When I&apos;m not coding, I enjoy [Your Hobby 1] and
+          [Your Hobby 2].
         </p>
       </section>
 
@@ -26,6 +27,7 @@ export default function HomePage() {
           Projects
         </h2>
         <div className="mt-6 grid gap-8">
+          {/* Project Card */}
           <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
             <h3 className="text-xl font-semibold">Project One</h3>
             <p className="mt-2 text-gray-700">
@@ -39,6 +41,7 @@ export default function HomePage() {
               View on GitHub
             </a>
           </div>
+          {/* Project Card */}
           <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
             <h3 className="text-xl font-semibold">Project Two</h3>
             <p className="mt-2 text-gray-700">
@@ -60,8 +63,8 @@ export default function HomePage() {
           Get In Touch
         </h2>
         <p className="mt-4 text-gray-700">
-          I'm always open to new opportunities and collaborations. Feel free to
-          reach out!
+          I&apos;m always open to new opportunities and collaborations. Feel
+          free to reach out!
         </p>
         <a
           href="mailto:youremail@example.com"
