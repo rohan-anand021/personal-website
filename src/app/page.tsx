@@ -1,9 +1,10 @@
+import Image from "next/image";
+
 export default function HomePage() {
   return (
     <div>
       <header className="text-center my-16">
         <h1 className="text-5xl font-bold tracking-tight">Rohan Anand</h1>
-        {/* FIX: Changed the <p> tag to a <div> */}
         <div className="mt-4 text-xl text-gray-600">
           Data Engineer @{" "}
           <span className="relative group">
@@ -15,8 +16,6 @@ export default function HomePage() {
             >
               Dataeconomy
             </a>
-
-            {/* Tooltip */}
             <span
               className="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-full
                          w-64 max-w-xs p-3 bg-white border rounded-lg shadow-lg
@@ -24,12 +23,10 @@ export default function HomePage() {
                          transition-opacity duration-300 pointer-events-none"
             >
               <span className="font-bold text-gray-900">Dataeconomy Inc.</span>
-              {/* FIX: Changed the nested <p> tag to a <div> */}
               <div className="text-sm text-gray-600 mt-1">
                 A premier provider of enterprise data management and cloud
                 solutions.
               </div>
-              {/* Triangle */}
               <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-t-8 border-t-white"></span>
             </span>
           </span>
@@ -43,6 +40,79 @@ export default function HomePage() {
           passionate about analyzing data, and building systems used to analyze
           data.
         </p>
+      </section>
+
+      {/* --- Updated Contact Me Section --- */}
+      <section id="contact" className="mt-24 mb-16">
+        {" "}
+        {/* Increased top margin */}
+        <h2 className="text-3xl font-bold border-b pb-2 mb-6">Contact Me</h2>
+        <div className="mt-10 flex items-start justify-around">
+          {" "}
+          {/* Spaced icons evenly */}
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/rohan-h-anand"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center text-gray-600 hover:text-blue-700 transition-transform duration-300 hover:scale-110"
+            aria-label="LinkedIn Profile"
+          >
+            <Image
+              src="/icons/linkedin.svg"
+              alt="LinkedIn Logo"
+              width={56} // Increased size
+              height={56} // Increased size
+            />
+            <span className="mt-3 text-sm">LinkedIn</span>
+          </a>
+          {/* Email */}
+          <a
+            href="mailto:anandro@bu.edu"
+            className="flex flex-col items-center text-gray-600 hover:text-red-600 transition-transform duration-300 hover:scale-110"
+            aria-label="Email"
+          >
+            <Image
+              src="/icons/gmail.svg"
+              alt="Gmail Logo"
+              width={56} // Increased size
+              height={56} // Increased size
+            />
+            <span className="mt-3 text-sm">Email Me</span>
+          </a>
+          {/* GitHub Professional */}
+          <a
+            href="https://github.com/rohan-anand21?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center text-gray-600 hover:text-gray-900 transition-transform duration-300 hover:scale-110"
+            aria-label="Professional GitHub Profile"
+          >
+            <Image
+              src="/icons/github-professional.svg"
+              alt="GitHub Logo"
+              width={56} // Increased size
+              height={56} // Increased size
+            />
+            <span className="mt-3 text-sm">GitHub - Professional</span>
+          </a>
+          {/* GitHub Personal */}
+          <a
+            href="https://github.com/rohan-anand021?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center text-gray-600 hover:text-gray-900 transition-transform duration-300 hover:scale-110"
+            aria-label="Personal GitHub Profile"
+          >
+            <Image
+              src="/icons/github-personal.svg"
+              alt="GitHub Logo"
+              width={56} // Increased size
+              height={56} // Increased size
+            />
+            <span className="mt-3 text-sm">GitHub - Personal</span>
+          </a>
+        </div>
       </section>
     </div>
   );
