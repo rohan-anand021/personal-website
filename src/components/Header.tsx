@@ -5,11 +5,12 @@ export default function Header() {
     <header className="bg-white shadow-sm">
       <nav className="max-w-4xl mx-auto px-4 sm:px-8 py-4 flex justify-between items-center">
         <div>
+          {/* Change the text in the Link below */}
           <Link
             href="/"
             className="text-xl font-bold text-gray-900 hover:text-gray-700"
           >
-            Your Name
+            Home
           </Link>
         </div>
         <div className="flex items-center gap-6">
