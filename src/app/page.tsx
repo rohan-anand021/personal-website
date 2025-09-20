@@ -12,7 +12,7 @@ export default function HomePage() {
               href="http://dataeconomy.ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-primary hover:underline"
             >
               Dataeconomy
             </a>
@@ -52,71 +52,91 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* --- Reverted Contact Me Section --- */}
+      {/* --- Contact Me Section (Bento Grid Layout) --- */}
       <section id="contact" className="mt-24 mb-16">
         <h2 className="text-3xl font-bold border-b pb-2 mb-6">Contact Me</h2>
-        <div className="mt-10 flex items-start justify-around">
-          {/* LinkedIn */}
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
           <a
             href="https://www.linkedin.com/in/rohan-h-anand"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center text-gray-600 hover:text-blue-700 transition-transform duration-300 hover:scale-110"
+            className="group relative flex items-center gap-4 p-6 bg-white/50 border rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
             aria-label="LinkedIn Profile"
           >
             <Image
               src="/icons/linkedin.svg"
-              alt="LinkedIn Logo"
-              width={56}
-              height={56}
+              alt=""
+              width={48}
+              height={48}
+              aria-hidden="true"
             />
-            <span className="mt-3 text-sm">LinkedIn</span>
+            <div>
+              <h3 className="font-semibold text-lg">LinkedIn</h3>
+            </div>
+            <span className="absolute top-4 right-4 text-gray-300 group-hover:text-primary transition-colors">
+              &rarr;
+            </span>
           </a>
-          {/* Email */}
           <a
             href="mailto:anandro@bu.edu"
-            className="flex flex-col items-center text-gray-600 hover:text-red-600 transition-transform duration-300 hover:scale-110"
+            className="group relative flex items-center gap-4 p-6 bg-white/50 border rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
             aria-label="Email"
           >
             <Image
               src="/icons/gmail.svg"
-              alt="Gmail Logo"
-              width={56}
-              height={56}
+              alt=""
+              width={48}
+              height={48}
+              aria-hidden="true"
             />
-            <span className="mt-3 text-sm">Email Me</span>
+            <div>
+              <h3 className="font-semibold text-lg">Email Me</h3>
+            </div>
+            <span className="absolute top-4 right-4 text-gray-300 group-hover:text-primary transition-colors">
+              &rarr;
+            </span>
           </a>
-          {/* GitHub Professional */}
           <a
             href="https://github.com/rohan-anand21?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center text-gray-600 hover:text-gray-900 transition-transform duration-300 hover:scale-110"
+            className="group relative flex items-center gap-4 p-6 bg-white/50 border rounded-lg shadow-sm hover:shadow-xl transition-all duration-300"
             aria-label="Professional GitHub Profile"
           >
             <Image
               src="/icons/github-professional.svg"
-              alt="GitHub Logo"
-              width={56}
-              height={56}
+              alt=""
+              width={48}
+              height={48}
+              aria-hidden="true"
             />
-            <span className="mt-3 text-sm">GitHub - Professional</span>
+            <div>
+              <h3 className="font-semibold text-lg">GitHub - Professional</h3>
+            </div>
+            <span className="absolute top-4 right-4 text-gray-300 group-hover:text-primary transition-colors">
+              &rarr;
+            </span>
           </a>
-          {/* GitHub Personal */}
           <a
             href="https://github.com/rohan-anand021?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center text-gray-600 hover:text-gray-900 transition-transform duration-300 hover:scale-110"
+            className="group relative flex items-center gap-4 p-6 bg-white/50 border rounded-lg shadow-sm hover:shadow-xl transition-all duration-300"
             aria-label="Personal GitHub Profile"
           >
             <Image
               src="/icons/github-personal.svg"
-              alt="GitHub Logo"
-              width={56}
-              height={56}
+              alt=""
+              width={48}
+              height={48}
+              aria-hidden="true"
             />
-            <span className="mt-3 text-sm">GitHub - Personal</span>
+            <div>
+              <h3 className="font-semibold text-lg">GitHub - Personal</h3>
+            </div>
+            <span className="absolute top-4 right-4 text-gray-300 group-hover:text-primary transition-colors">
+              &rarr;
+            </span>
           </a>
         </div>
       </section>

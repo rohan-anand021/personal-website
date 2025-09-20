@@ -1,3 +1,49 @@
+/* src/app/globals.css */
 @import "tailwindcss";
 
-/* You can add any custom CSS variables or base styles below this line if you need them in the future. */
+body {
+    @apply bg-gray-50 text-gray-800;
+}
+
+/* Keyframe for page content fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Styles for the Spotlight Card Effect */
+.spotlight-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.spotlight-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle 350px at var(--x) var(--y),
+        rgba(59, 130, 246, 0.15),
+        transparent 80%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Make sure the pseudo-element doesn't block interactions */
+}
+
+.spotlight-card:hover::before {
+    opacity: 1;
+}

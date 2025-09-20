@@ -63,8 +63,9 @@ export default function ContactPage() {
                 name="message"
                 id="message"
                 required
-                rows={4}
+                rows={16} // <-- Changed from 4 to 6
                 className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                defaultValue={"Hello Rohan,\n\n"} // <-- Added preloaded text
               ></textarea>
             </div>
           </div>

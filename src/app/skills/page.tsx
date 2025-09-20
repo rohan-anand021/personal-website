@@ -1,3 +1,7 @@
+// src/app/skills/page.tsx
+"use client";
+import { useRef, useEffect } from "react";
+
 const skills = {
   Languages: [
     {
@@ -110,12 +114,37 @@ const SkillCard = ({
 }: {
   name: string;
   description: string;
-}) => (
-  <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-    <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
-    <p className="mt-2 text-gray-600 leading-relaxed">{description}</p>
-  </div>
-);
+}) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty("--x", `${x}px`);
+      card.style.setProperty("--y", `${y}px`);
+    };
+
+    card.addEventListener("mousemove", handleMouseMove);
+    return () => card.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  return (
+    <div
+      ref={cardRef}
+      className="spotlight-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-shadow duration-300"
+    >
+      <div className="relative z-10">
+        <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
+        <p className="mt-2 text-gray-600 leading-relaxed">{description}</p>
+      </div>
+    </div>
+  );
+};
 
 export default function SkillsPage() {
   return (
