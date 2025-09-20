@@ -55,6 +55,59 @@ export default function ProjectsPage() {
           Professional Projects
         </h2>
         <div className="grid gap-10">
+          {/* --- Maternal Health & Infant Outcomes Analysis Project --- */}
+          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <h3 className="text-2xl font-semibold">
+              Maternal Health & Infant Outcomes Analysis
+            </h3>
+            <p className="mt-3 text-gray-700 leading-relaxed">
+              An interactive website built with R and Quarto analyzing the
+              impact of maternal lifestyle choices, particularly smoking, on
+              infant health outcomes using U.S. natality data. The project
+              explores the current landscape of maternal smoking and its
+              correlation with key infant health metrics like birth weight and
+              APGAR scores, also investigating other factors such as maternal
+              BMI to inform better prenatal health practices.
+            </p>
+
+            {/* --- Interactive Embed --- */}
+            <div className="mt-6 border rounded-lg overflow-hidden shadow-md bg-gray-50">
+              <iframe
+                src="https://ma-415-53lsxj6bk-rohan-anands-projects.vercel.app/big_picture.html"
+                className="w-full h-96 sm:h-[500px]"
+                title="Maternal Health & Infant Outcomes Analysis Live Site"
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            <div className="mt-5 flex items-center gap-4">
+              <a
+                href="https://ma-415-n8hl1cp2x-rohan-anands-projects.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                View Live Site
+              </a>
+              <a
+                href="https://github.com/rohan-anand21/ma415-maternal-health-analysis/tree/main"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-gray-800 text-white font-semibold px-5 py-2 rounded-lg hover:bg-gray-700 transition-colors"
+              >
+                Source Code
+              </a>
+              <a
+                href="https://youtu.be/idH7NyRJwKc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-red-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-red-700 transition-colors"
+              >
+                Project Video
+              </a>
+            </div>
+          </div>
+
           {/* --- FairCase AI Project --- */}
           <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
             <h3 className="text-2xl font-semibold">FairCase AI</h3>
