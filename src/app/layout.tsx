@@ -5,10 +5,13 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// Update the title in the metadata object below
+// Updated metadata object
 export const metadata: Metadata = {
   title: "Rohan Anand | Personal Website",
   description: "My personal portfolio and blog.",
+  icons: {
+    icon: "/favicon.svg", // This points to your new SVG favicon in the public folder
+  },
 };
 
 export default function RootLayout({

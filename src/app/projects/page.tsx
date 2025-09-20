@@ -16,6 +16,17 @@ export default function ProjectsPage() {
               D3.js, and TopoJSON, this project uses a Voronoi diagram to
               partition the map into territories for each team.
             </p>
+
+            {/* --- Interactive Embed --- */}
+            <div className="mt-6 border rounded-lg overflow-hidden shadow-md bg-gray-50">
+              <iframe
+                src="https://nfl-voronoi-map.vercel.app"
+                className="w-full h-96 sm:h-[500px]"
+                title="Interactive NFL Voronoi Map"
+                loading="lazy"
+              ></iframe>
+            </div>
+
             <div className="mt-5 flex items-center gap-4">
               <a
                 href="https://nfl-voronoi-map.vercel.app"
@@ -54,6 +65,17 @@ export default function ProjectsPage() {
               department rules, ensuring unbiased, data-driven recommendations
               for disciplinary actions.
             </p>
+
+            {/* --- PDF Embed --- */}
+            <div className="mt-6 border rounded-lg overflow-hidden shadow-md">
+              <iframe
+                src="/faircase-poster.pdf"
+                className="w-full h-[500px] sm:h-[650px]"
+                title="FairCase AI Poster"
+                loading="lazy"
+              ></iframe>
+            </div>
+
             <div className="mt-5 flex items-center gap-4">
               <a
                 href="https://github.com/rohan-anand21/faircase-ai/tree/main/fa24/LLM_Assesment_Model"
@@ -69,7 +91,6 @@ export default function ProjectsPage() {
           {/* --- 311 Service Tracker Project --- */}
           <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
             <h3 className="text-2xl font-semibold">311 Service Tracker</h3>
-            {/* FIX: Replaced ' with &apos; in the line below */}
             <p className="mt-3 text-gray-700 leading-relaxed">
               An in-depth analysis of the City of Boston&apos;s 311 service
               requests from 2011-2023. This project created a historical
@@ -77,6 +98,17 @@ export default function ProjectsPage() {
               improvement, and analyze how service patterns differ across
               communities, especially those with high social vulnerability.
             </p>
+
+            {/* --- PDF Embed --- */}
+            <div className="mt-6 border rounded-lg overflow-hidden shadow-md">
+              <iframe
+                src="/311-poster.pdf"
+                className="w-full h-[500px] sm:h-[650px]"
+                title="311 Service Tracker Poster"
+                loading="lazy"
+              ></iframe>
+            </div>
+
             <div className="mt-5 flex items-center gap-4">
               <a
                 href="https://github.com/rohan-anand21/311-service-tracker/tree/main/fa23-team-d"
