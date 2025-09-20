@@ -55,6 +55,39 @@ export default function ProjectsPage() {
           Professional Projects
         </h2>
         <div className="grid gap-10">
+          {/* --- FairCase AI Project --- */}
+          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <h3 className="text-2xl font-semibold">FairCase AI</h3>
+            <p className="mt-3 text-gray-700 leading-relaxed">
+              An innovative AI tool for evaluating police misconduct
+              allegations. This system uses Large Language Models, LangChain,
+              and ChromaDB to analyze complaints against established police
+              department rules, ensuring unbiased, data-driven recommendations
+              for disciplinary actions.
+            </p>
+
+            {/* --- PDF Embed --- */}
+            <div className="mt-6 border rounded-lg overflow-hidden shadow-md">
+              <iframe
+                src="/faircase-poster.pdf"
+                className="w-full h-[500px] sm:h-[650px]"
+                title="FairCase AI Poster"
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            <div className="mt-5 flex items-center gap-4">
+              <a
+                href="https://github.com/rohan-anand21/faircase-ai/tree/main/fa24/LLM_Assesment_Model"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-gray-800 text-white font-semibold px-5 py-2 rounded-lg hover:bg-gray-700 transition-colors"
+              >
+                Source Code
+              </a>
+            </div>
+          </div>
+
           {/* --- Maternal Health & Infant Outcomes Analysis Project --- */}
           <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
             <h3 className="text-2xl font-semibold">
@@ -104,39 +137,6 @@ export default function ProjectsPage() {
                 className="inline-block bg-red-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-red-700 transition-colors"
               >
                 Project Video
-              </a>
-            </div>
-          </div>
-
-          {/* --- FairCase AI Project --- */}
-          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-            <h3 className="text-2xl font-semibold">FairCase AI</h3>
-            <p className="mt-3 text-gray-700 leading-relaxed">
-              An innovative AI tool for evaluating police misconduct
-              allegations. This system uses Large Language Models, LangChain,
-              and ChromaDB to analyze complaints against established police
-              department rules, ensuring unbiased, data-driven recommendations
-              for disciplinary actions.
-            </p>
-
-            {/* --- PDF Embed --- */}
-            <div className="mt-6 border rounded-lg overflow-hidden shadow-md">
-              <iframe
-                src="/faircase-poster.pdf"
-                className="w-full h-[500px] sm:h-[650px]"
-                title="FairCase AI Poster"
-                loading="lazy"
-              ></iframe>
-            </div>
-
-            <div className="mt-5 flex items-center gap-4">
-              <a
-                href="https://github.com/rohan-anand21/faircase-ai/tree/main/fa24/LLM_Assesment_Model"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-gray-800 text-white font-semibold px-5 py-2 rounded-lg hover:bg-gray-700 transition-colors"
-              >
-                Source Code
               </a>
             </div>
           </div>
