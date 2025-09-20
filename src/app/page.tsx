@@ -33,23 +33,29 @@ export default function HomePage() {
         </div>
       </header>
 
+      {/* --- About Me Section --- */}
       <section id="about" className="my-16">
         <h2 className="text-3xl font-bold border-b pb-2 mb-6">About Me</h2>
-        <p className="text-gray-700 leading-relaxed">
-          Hello! I&apos;m a data engineer based in Charlotte, NC. I am
-          passionate about analyzing data, and building systems used to analyze
-          data.
-        </p>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-gray-700 leading-relaxed text-left space-y-4">
+            <p>
+              Hello! I&apos;m a data engineer with a passion for analyzing data,
+              and building the systems to do so.
+            </p>
+            <p></p>
+            <p className="font-semibold pt-2">
+              I&apos;m currently seeking new opportunities in data analysis,
+              science or engineering. Feel free to explore my projects or get in
+              touch!
+            </p>
+          </div>
+        </div>
       </section>
 
-      {/* --- Updated Contact Me Section --- */}
+      {/* --- Reverted Contact Me Section --- */}
       <section id="contact" className="mt-24 mb-16">
-        {" "}
-        {/* Increased top margin */}
         <h2 className="text-3xl font-bold border-b pb-2 mb-6">Contact Me</h2>
         <div className="mt-10 flex items-start justify-around">
-          {" "}
-          {/* Spaced icons evenly */}
           {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/rohan-h-anand"
@@ -61,8 +67,8 @@ export default function HomePage() {
             <Image
               src="/icons/linkedin.svg"
               alt="LinkedIn Logo"
-              width={56} // Increased size
-              height={56} // Increased size
+              width={56}
+              height={56}
             />
             <span className="mt-3 text-sm">LinkedIn</span>
           </a>
@@ -75,8 +81,8 @@ export default function HomePage() {
             <Image
               src="/icons/gmail.svg"
               alt="Gmail Logo"
-              width={56} // Increased size
-              height={56} // Increased size
+              width={56}
+              height={56}
             />
             <span className="mt-3 text-sm">Email Me</span>
           </a>
@@ -91,8 +97,8 @@ export default function HomePage() {
             <Image
               src="/icons/github-professional.svg"
               alt="GitHub Logo"
-              width={56} // Increased size
-              height={56} // Increased size
+              width={56}
+              height={56}
             />
             <span className="mt-3 text-sm">GitHub - Professional</span>
           </a>
@@ -107,8 +113,8 @@ export default function HomePage() {
             <Image
               src="/icons/github-personal.svg"
               alt="GitHub Logo"
-              width={56} // Increased size
-              height={56} // Increased size
+              width={56}
+              height={56}
             />
             <span className="mt-3 text-sm">GitHub - Personal</span>
           </a>

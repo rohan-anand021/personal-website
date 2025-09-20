@@ -88,6 +88,40 @@ export default function ProjectsPage() {
             </div>
           </div>
 
+          {/* --- Political Analysis Project --- */}
+          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <h3 className="text-2xl font-semibold">
+              Unemployment & Voting Patterns Analysis
+            </h3>
+            <p className="mt-3 text-gray-700 leading-relaxed">
+              A regression analysis exploring the relationship between
+              county-level unemployment rates, age demographics, and Democratic
+              vote share in seven key swing states during the 2020 U.S.
+              Presidential Election.
+            </p>
+
+            {/* --- PDF Embed --- */}
+            <div className="mt-6 border rounded-lg overflow-hidden shadow-md">
+              <iframe
+                src="/399poster.pdf"
+                className="w-full h-[500px] sm:h-[650px]"
+                title="Unemployment & Voting Patterns Analysis Poster"
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            <div className="mt-5 flex items-center gap-4">
+              <a
+                href="https://github.com/rohan-anand021/politics"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-gray-800 text-white font-semibold px-5 py-2 rounded-lg hover:bg-gray-700 transition-colors"
+              >
+                Source Code
+              </a>
+            </div>
+          </div>
+
           {/* --- 311 Service Tracker Project --- */}
           <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
             <h3 className="text-2xl font-semibold">311 Service Tracker</h3>
@@ -119,6 +153,32 @@ export default function ProjectsPage() {
                 Source Code
               </a>
             </div>
+          </div>
+
+          {/* --- COVID-19 Project --- */}
+          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <h3 className="text-2xl font-semibold">
+              COVID-19 Mortality Prediction
+            </h3>
+            <p className="mt-3 text-gray-700 leading-relaxed">
+              Utilized supervised learning techniques, including Decision Trees
+              and K-Nearest Neighbors, to predict patient mortality from a
+              Kaggle dataset of COVID-19 cases. Implemented Singular Value
+              Decomposition (SVD) for dimensionality reduction to improve model
+              performance and accuracy.
+            </p>
+
+            {/* --- PDF Embed --- */}
+            <div className="mt-6 border rounded-lg overflow-hidden shadow-md">
+              <iframe
+                src="/covid.pdf"
+                className="w-full h-[500px] sm:h-[650px]"
+                title="COVID-19 Mortality Prediction Report"
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            <div className="mt-5 text-sm text-gray-500"></div>
           </div>
         </div>
       </div>
