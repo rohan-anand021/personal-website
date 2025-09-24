@@ -12,7 +12,8 @@ export default function HomePage() {
               href="http://dataeconomy.ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline"
+              // --- CHANGE IS HERE ---
+              className="font-semibold text-blue-600 hover:underline"
             >
               Dataeconomy
             </a>

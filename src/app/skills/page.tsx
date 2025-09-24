@@ -12,12 +12,17 @@ const skills = {
     {
       name: "SQL",
       description:
-        "Extensive experience writing complex queries and constructing data models in platforms like Snowflake and PostgreSQL to analyze data and identify key business insights.",
+        "Extensive experience writing complex queries and constructing data models in platforms like Snowflake to analyze data and identify key business insights.",
     },
     {
       name: "R",
       description:
         "Utilized for statistical analysis and data visualization during academic projects and coursework.",
+    },
+    {
+      name: "Rust",
+      description:
+        "Utilized for exploring data during academic projects and coursework.",
     },
   ],
   "Cloud & Platforms": [
@@ -99,11 +104,6 @@ const skills = {
       name: "Git",
       description:
         "Proficient in version control using Git, including branching, merging, and collaborating on codebases in team environments.",
-    },
-    {
-      name: "dbt",
-      description:
-        "Experienced in using dbt for transforming data in the warehouse, building modular, reusable data models, and ensuring data quality through automated testing.",
     },
   ],
 };

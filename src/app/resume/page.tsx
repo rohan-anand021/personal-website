@@ -1,6 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import {
+  BriefcaseIcon,
+  AcademicCapIcon,
+  SparklesIcon,
+  CodeBracketSquareIcon,
+  EnvelopeIcon,
+  PhoneIcon,
+  LinkIcon,
+  MapPinIcon,
+  StarIcon,
+} from "@heroicons/react/24/solid";
 
 // Data parsed from your LaTeX resume
 const resumeData = {
@@ -15,6 +26,7 @@ const resumeData = {
     {
       title: "Data Engineer",
       company: "Dataeconomy",
+      companyLink: "https://dataeconomy.ai",
       location: "Charlotte, NC",
       date: "Mar 2025 – Present",
       description: [
@@ -34,6 +46,7 @@ const resumeData = {
     {
       title: "AI Engineer",
       company: "BU Spark!",
+      companyLink: "https://www.bu.edu/spark/",
       location: "Boston, MA",
       date: "Sep 2024 – Jan 2025",
       description: [
@@ -48,6 +61,7 @@ const resumeData = {
     {
       title: "Data Services Intern",
       company: "Axis Technology, LLC",
+      companyLink: "https://www.axistechnologyllc.com",
       location: "Boston, MA",
       date: "May 2024 – Aug 2024",
       description: [
@@ -60,6 +74,7 @@ const resumeData = {
     {
       title: "Data Analyst Intern",
       company: "AS Insurance Agency",
+      companyLink: "https://www.asureagency.com",
       location: "Manchester, NH",
       date: "Jun 2022 – Aug 2022",
       description: [
@@ -109,61 +124,86 @@ const resumeData = {
 
 // --- HTML Resume Component ---
 const HtmlResume = () => (
-  <div className="bg-white p-8 sm:p-12 border border-gray-200 rounded-lg shadow-sm font-sans text-gray-800">
+  <div className="bg-white p-6 sm:p-10 border border-gray-200 rounded-lg shadow-lg font-sans text-gray-800 max-w-4xl mx-auto">
     {/* Header */}
     <header className="text-center mb-10">
-      <h1 className="text-5xl font-bold tracking-tight">{resumeData.name}</h1>
-      <div className="mt-4 text-sm text-gray-600 flex justify-center items-center flex-wrap gap-x-4 gap-y-2">
+      <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">
+        {resumeData.name}
+      </h1>
+      <div className="mt-4 text-sm text-gray-500 flex justify-center items-center flex-wrap gap-x-5 gap-y-2">
         <a
           href={`mailto:${resumeData.contact.email}`}
-          className="hover:underline"
+          className="flex items-center gap-1.5 hover:text-sky-600 transition-colors"
         >
-          {resumeData.contact.email}
+          <EnvelopeIcon className="h-4 w-4" /> {resumeData.contact.email}
         </a>
-        <span>|</span>
+        <span className="text-gray-300 hidden sm:inline">|</span>
         <a
           href={resumeData.contact.website}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:underline"
+          className="flex items-center gap-1.5 hover:text-sky-600 transition-colors"
         >
-          Portfolio
+          <LinkIcon className="h-4 w-4" /> Portfolio
         </a>
-        <span>|</span>
+        <span className="text-gray-300 hidden sm:inline">|</span>
         <a
           href={resumeData.contact.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:underline"
+          className="flex items-center gap-1.5 hover:text-sky-600 transition-colors"
         >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            {" "}
+            <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-4.499 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />{" "}
+          </svg>
           LinkedIn
         </a>
-        <span>|</span>
-        <span>{resumeData.contact.phone}</span>
+        <span className="text-gray-300 hidden sm:inline">|</span>
+        <span className="flex items-center gap-1.5">
+          <PhoneIcon className="h-4 w-4" /> {resumeData.contact.phone}
+        </span>
       </div>
     </header>
 
-    {/* Sections */}
-    <div className="space-y-10">
+    {/* Main Content */}
+    <div className="space-y-12">
       {/* Experience */}
       <section>
-        <h2 className="text-2xl font-bold border-b pb-2 mb-4">Experience</h2>
-        <div className="space-y-6">
+        <h2 className="flex items-center gap-3 text-2xl font-bold text-gray-800 border-b-2 border-gray-100 pb-3 mb-6">
+          <BriefcaseIcon className="h-7 w-7 text-sky-600" />
+          Experience
+        </h2>
+        <div className="space-y-8">
           {resumeData.experience.map((job, index) => (
             <div key={index}>
-              <div className="flex justify-between items-baseline">
-                <h3 className="text-lg font-bold">{job.title}</h3>
-                <span className="text-sm font-light text-gray-500">
-                  {job.date}
-                </span>
+              <div className="flex justify-between items-start mb-1">
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">
+                    {job.title}
+                  </h3>
+                  <a
+                    href={job.companyLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-md font-semibold text-sky-700 hover:underline"
+                  >
+                    {job.company}
+                  </a>
+                </div>
+                <div className="text-right text-xs font-medium text-gray-500 whitespace-nowrap">
+                  <p>{job.date}</p>
+                  <p className="flex items-center justify-end gap-1 mt-1">
+                    <MapPinIcon className="h-3 w-3" /> {job.location}
+                  </p>
+                </div>
               </div>
-              <div className="flex justify-between items-baseline mb-2">
-                <h4 className="text-md italic">{job.company}</h4>
-                <span className="text-sm font-light text-gray-500">
-                  {job.location}
-                </span>
-              </div>
-              <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+              <ul className="list-disc list-outside ml-5 space-y-1.5 text-sm text-gray-700 leading-relaxed">
                 {job.description.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}
@@ -175,17 +215,22 @@ const HtmlResume = () => (
 
       {/* Projects */}
       <section>
-        <h2 className="text-2xl font-bold border-b pb-2 mb-4">Projects</h2>
+        <h2 className="flex items-center gap-3 text-2xl font-bold text-gray-800 border-b-2 border-gray-100 pb-3 mb-6">
+          <SparklesIcon className="h-7 w-7 text-sky-600" />
+          Projects
+        </h2>
         <div className="space-y-6">
           {resumeData.projects.map((project, index) => (
             <div key={index}>
               <div className="flex justify-between items-baseline">
-                <h3 className="text-lg font-bold">{project.name}</h3>
-                <span className="text-sm font-light text-gray-500">
+                <h3 className="text-lg font-bold text-gray-900">
+                  {project.name}
+                </h3>
+                <span className="text-xs font-medium text-gray-500">
                   {project.date}
                 </span>
               </div>
-              <ul className="list-disc list-inside space-y-1 text-sm text-gray-700 mt-2">
+              <ul className="list-disc list-outside ml-5 mt-2 space-y-1.5 text-sm text-gray-700 leading-relaxed">
                 {project.description.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}
@@ -197,64 +242,94 @@ const HtmlResume = () => (
 
       {/* Technical Skills */}
       <section>
-        <h2 className="text-2xl font-bold border-b pb-2 mb-4">
+        <h2 className="flex items-center gap-3 text-2xl font-bold text-gray-800 border-b-2 border-gray-100 pb-3 mb-6">
+          <CodeBracketSquareIcon className="h-7 w-7 text-sky-600" />
           Technical Skills
         </h2>
-        <div className="text-sm text-gray-700 space-y-2">
+        <div className="space-y-4">
           {Object.entries(resumeData.skills).map(([category, skills]) => (
-            <div key={category}>
-              <span className="font-bold">{category}:</span> {skills}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section>
-        <h2 className="text-2xl font-bold border-b pb-2 mb-4">
-          Certifications
-        </h2>
-        <div>
-          {resumeData.certifications.map((cert, index) => (
             <div
-              key={index}
-              className="flex justify-between items-baseline text-sm"
+              key={category}
+              className="flex flex-col sm:flex-row sm:items-start gap-2"
             >
-              <a
-                href={cert.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-blue-600 hover:underline"
-              >
-                {cert.name}
-              </a>
-              <span className="text-gray-500 font-light">{cert.date}</span>
+              <h4 className="font-bold w-full sm:w-40 text-gray-700 whitespace-nowrap">
+                {category}:
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {skills.split(", ").map((skill) => (
+                  <span
+                    key={skill}
+                    className="bg-sky-100 text-sky-800 text-xs font-medium px-2.5 py-1 rounded-full"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Education */}
-      <section>
-        <h2 className="text-2xl font-bold border-b pb-2 mb-4">Education</h2>
-        <div>
-          <div className="flex justify-between items-baseline">
-            <h3 className="text-lg font-bold">{resumeData.education.school}</h3>
-            <span className="text-sm font-light text-gray-500">
-              {resumeData.education.date}
-            </span>
+      {/* Grid for Certifications & Education */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {/* Certifications */}
+        <section>
+          <h2 className="flex items-center gap-3 text-2xl font-bold text-gray-800 border-b-2 border-gray-100 pb-3 mb-6">
+            <StarIcon className="h-7 w-7 text-sky-600" />
+            Certifications
+          </h2>
+          <div>
+            {resumeData.certifications.map((cert, index) => (
+              <div
+                key={index}
+                className="flex justify-between items-baseline text-sm"
+              >
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-sky-600 hover:underline"
+                >
+                  {cert.name}
+                </a>
+                <span className="text-gray-500 font-light text-xs">
+                  {cert.date}
+                </span>
+              </div>
+            ))}
           </div>
-          <div className="flex justify-between items-baseline mb-1">
-            <h4 className="text-md italic">{resumeData.education.degree}</h4>
-            <span className="text-sm font-light text-gray-500">
-              {resumeData.education.location}
-            </span>
+        </section>
+
+        {/* Education */}
+        <section>
+          <h2 className="flex items-center gap-3 text-2xl font-bold text-gray-800 border-b-2 border-gray-100 pb-3 mb-6">
+            <AcademicCapIcon className="h-7 w-7 text-sky-600" />
+            Education
+          </h2>
+          <div>
+            <div className="flex justify-between items-baseline">
+              <h3 className="text-lg font-bold">
+                {resumeData.education.school}
+              </h3>
+              <span className="text-xs font-medium text-gray-500">
+                {resumeData.education.date}
+              </span>
+            </div>
+            <div className="flex justify-between items-baseline mb-1">
+              <h4 className="text-md font-semibold text-sky-700">
+                {resumeData.education.degree}
+              </h4>
+              <span className="text-xs font-light text-gray-500 flex items-center gap-1">
+                <MapPinIcon className="h-3 w-3" />{" "}
+                {resumeData.education.location}
+              </span>
+            </div>
+            <p className="text-sm text-gray-600">
+              {resumeData.education.details}
+            </p>
           </div>
-          <p className="text-sm text-gray-600">
-            {resumeData.education.details}
-          </p>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
 );

@@ -11,10 +11,11 @@ export default function ProjectsPage() {
           <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
             <h3 className="text-2xl font-semibold">NFL Voronoi Map</h3>
             <p className="mt-3 text-gray-700 leading-relaxed">
-              An interactive map of the United States that visualizes NFL team
-              allegiances based on the nearest stadium. Built with Next.js,
-              D3.js, and TopoJSON, this project uses a Voronoi diagram to
-              partition the map into territories for each team.
+              An interactive map that lets you know what NFL team to root for
+              based on distance to the nearest NFL stadium.
+              <br />
+              <br />
+              Built with: Next.js, D3, TopoJson
             </p>
 
             {/* --- Interactive Embed --- */}
@@ -59,11 +60,11 @@ export default function ProjectsPage() {
           <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
             <h3 className="text-2xl font-semibold">FairCase AI</h3>
             <p className="mt-3 text-gray-700 leading-relaxed">
-              An innovative AI tool for evaluating police misconduct
-              allegations. This system uses Large Language Models, LangChain,
-              and ChromaDB to analyze complaints against established police
-              department rules, ensuring unbiased, data-driven recommendations
-              for disciplinary actions.
+              An innovative AI tool for evaluating police misconduct alegations.
+              This system uses Large Language Models, LangChain, and ChromaDB to
+              analyze complaints against established police department rules,
+              ensuring unbiased, data-driven recommendations for disciplinary
+              actions.
             </p>
 
             {/* --- PDF Embed --- */}
@@ -199,6 +200,40 @@ export default function ProjectsPage() {
             <div className="mt-5 flex items-center gap-4">
               <a
                 href="https://github.com/rohan-anand21/311-service-tracker/tree/main/fa23-team-d"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-gray-800 text-white font-semibold px-5 py-2 rounded-lg hover:bg-gray-700 transition-colors"
+              >
+                Source Code
+              </a>
+            </div>
+          </div>
+
+          {/* --- Graphing and Analyzing a DataSet using Rust Project --- */}
+          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <h3 className="text-2xl font-semibold">
+              Graphing and Analyzing a DataSet using Rust
+            </h3>
+            <p className="mt-3 text-gray-700 leading-relaxed">
+              Analyzed a Twitter friends dataset using Rust to explore graph
+              theory concepts. This project involved building a graph with the
+              petgraph module to calculate the average degrees of separation and
+              investigate the friendship paradox.
+            </p>
+
+            {/* --- PDF Embed --- */}
+            <div className="mt-6 border rounded-lg overflow-hidden shadow-md">
+              <iframe
+                src="/report.pdf"
+                className="w-full h-[500px] sm:h-[650px]"
+                title="Graphing and Analyzing a DataSet using Rust Report"
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            <div className="mt-5 flex items-center gap-4">
+              <a
+                href="https://github.com/rohan-anand021/Analyzing-a-Graph-using-Rust"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-gray-800 text-white font-semibold px-5 py-2 rounded-lg hover:bg-gray-700 transition-colors"
