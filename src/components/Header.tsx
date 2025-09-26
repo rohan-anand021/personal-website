@@ -18,11 +18,10 @@ export default function Header() {
   }, []);
 
   const navLinks = [
+    { href: "/resume", label: "Resume" },
     { href: "/projects", label: "Projects" },
     { href: "/skills", label: "Tech Stack" },
     { href: "/blog", label: "Blog" },
-    { href: "/resume", label: "Resume" },
-    { href: "/contact", label: "Contact" },
   ];
 
   return (

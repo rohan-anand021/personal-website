@@ -78,11 +78,7 @@ export default function HomePage() {
               &rarr;
             </span>
           </a>
-          <a
-            href="mailto:anandro@bu.edu"
-            className="group relative flex items-center gap-4 p-6 bg-white/50 border rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
-            aria-label="Email"
-          >
+          <div className="group relative flex items-center gap-4 p-6 bg-white/50 border rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 backdrop-blur-sm">
             <Image
               src="/icons/gmail.svg"
               alt=""
@@ -91,12 +87,12 @@ export default function HomePage() {
               aria-hidden="true"
             />
             <div>
-              <h3 className="font-semibold text-lg">Email Me</h3>
+              <h3 className="font-semibold text-lg">Email: anandro@bu.edu</h3>
             </div>
             <span className="absolute top-4 right-4 text-gray-300 group-hover:text-primary transition-colors">
               &rarr;
             </span>
-          </a>
+          </div>
           <a
             href="https://github.com/rohan-anand21?tab=repositories"
             target="_blank"
