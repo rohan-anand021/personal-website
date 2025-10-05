@@ -1,12 +1,19 @@
+// src/app/resume/download/route.ts
 import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
 
+export const runtime = "nodejs";
+
 export async function GET() {
   const filePath = path.join(process.cwd(), "public", "resume.pdf");
-  const file = await fs.readFile(filePath);
+  const buf = await fs.readFile(filePath);
 
-  return new NextResponse(file, {
+  // Create a true ArrayBuffer (not ArrayBufferLike) by copying
+  const ab = new ArrayBuffer(buf.byteLength);
+  new Uint8Array(ab).set(buf); // copy Buffer bytes into AB
+
+  return new NextResponse(ab, {
     status: 200,
     headers: {
       "Content-Type": "application/pdf",
