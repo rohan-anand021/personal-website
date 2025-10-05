@@ -33,35 +33,38 @@ export default function BlogPost() {
   const [showPdf, setShowPdf] = useState(false);
   return (
     <article className="my-12">
-      <header className="border-b pb-4 mb-8">
-        <h1 className="text-4xl font-bold">{post.title}</h1>
-        <div className="flex items-center gap-4 mt-4">
-          <button
-            onClick={() => setShowPdf(!showPdf)}
-            className="inline-block bg-gray-200 text-gray-800 font-semibold px-5 py-2 rounded-lg hover:bg-gray-300 transition-colors"
-          >
-            {showPdf ? "View HTML" : "View Original PDF"}
-          </button>
-          <a
-            href={post.pdfPath}
-            download
-            className="inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Download PDF
-          </a>
-        </div>
-      </header>
+      {/* Add this wrapper for generous side margins */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <header className="border-b pb-4 mb-8">
+          <h1 className="text-4xl font-bold">{post.title}</h1>
+          <div className="flex items-center gap-4 mt-4">
+            <button
+              onClick={() => setShowPdf(!showPdf)}
+              className="inline-block bg-gray-200 text-gray-800 font-semibold px-5 py-2 rounded-lg hover:bg-gray-300 transition-colors"
+            >
+              {showPdf ? "View HTML" : "View Original PDF"}
+            </button>
+            <a
+              href={post.pdfPath}
+              download
+              className="inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Download PDF
+            </a>
+          </div>
+        </header>
 
-      <div className="bg-white p-8 sm:p-12 border border-gray-200 rounded-lg shadow-sm">
-        {showPdf ? (
-          <iframe
-            src={post.pdfPath}
-            className="w-full h-[1000px]"
-            title={post.title}
-          ></iframe>
-        ) : (
-          <HtmlContent content={post.content} />
-        )}
+        <div className="bg-white p-8 sm:p-12 border border-gray-200 rounded-lg shadow-sm">
+          {showPdf ? (
+            <iframe
+              src={post.pdfPath}
+              className="w-full h-[1000px]"
+              title={post.title}
+            />
+          ) : (
+            <HtmlContent content={post.content} />
+          )}
+        </div>
       </div>
     </article>
   );

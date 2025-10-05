@@ -1,3 +1,5 @@
+//src/app/resume/page.tsx
+
 "use client";
 
 import { useState } from "react";
@@ -339,39 +341,41 @@ export default function ResumePage() {
 
   return (
     <section id="resume" className="my-12">
-      {/* HEADER SECTION */}
-      <div className="flex flex-col sm:flex-row justify-between sm:items-center border-b pb-4 mb-8 gap-4">
-        <h1 className="text-4xl font-bold">Resume</h1>
-        <div className="flex items-center gap-4">
-          <button
-            onClick={() => setShowPdf(!showPdf)}
-            className="inline-block bg-gray-200 text-gray-800 font-semibold px-5 py-2 rounded-lg hover:bg-gray-300 transition-colors"
-          >
-            {showPdf ? "View HTML" : "View PDF"}
-          </button>
-          <a
-            href="/resume.pdf"
-            download="Rohan_Anand_Resume.pdf"
-            className="inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Download
-          </a>
-        </div>
-      </div>
-
-      {/* EMBEDDED RESUME OR HTML RESUME SECTION */}
-      <div>
-        {showPdf ? (
-          <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
-            <iframe
-              src="/resume.pdf"
-              className="w-full h-[1000px]"
-              title="Rohan Anand's Resume"
-            ></iframe>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        {/* HEADER SECTION */}
+        <div className="flex flex-col sm:flex-row justify-between sm:items-center border-b pb-4 mb-8 gap-4">
+          <h1 className="text-4xl font-bold">Resume</h1>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setShowPdf(!showPdf)}
+              className="inline-block bg-gray-200 text-gray-800 font-semibold px-5 py-2 rounded-lg hover:bg-gray-300 transition-colors"
+            >
+              {showPdf ? "View HTML" : "View PDF"}
+            </button>
+            <a
+              href="/resume.pdf"
+              download="Rohan_Anand_Resume.pdf"
+              className="inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Download
+            </a>
           </div>
-        ) : (
-          <HtmlResume />
-        )}
+        </div>
+
+        {/* EMBEDDED RESUME OR HTML RESUME SECTION */}
+        <div>
+          {showPdf ? (
+            <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+              <iframe
+                src="/resume.pdf"
+                className="w-full h-[1000px]"
+                title="Rohan Anand's Resume"
+              />
+            </div>
+          ) : (
+            <HtmlResume />
+          )}
+        </div>
       </div>
     </section>
   );

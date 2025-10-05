@@ -3,56 +3,55 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+
+const nav = [
+  { name: "Home", href: "/" },
+  { name: "Projects", href: "/projects" },
+  { name: "Blog", href: "/blog" },
+  { name: "Skills", href: "/skills" },
+  { name: "Resume", href: "/resume" },
+];
 
 export default function Header() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navLinks = [
-    { href: "/resume", label: "Resume" },
-    { href: "/projects", label: "Projects" },
-    { href: "/skills", label: "Tech Stack" },
-    { href: "/blog", label: "Blog" },
-  ];
+  const isActive = (href: string) =>
+    href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(href + "/");
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/80 backdrop-blur-sm shadow-md"
-          : "bg-transparent backdrop-blur-none shadow-none"
-      }`}
-    >
-      <nav className="max-w-4xl mx-auto px-4 sm:px-8 py-4 flex justify-between items-center">
-        <div>
-          <Link
-            href="/"
-            className="text-xl font-bold text-gray-900 hover:text-primary transition-colors"
-          >
-            Home
-          </Link>
-        </div>
-        <div className="hidden sm:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`relative text-gray-600 hover:text-primary transition-colors after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-                pathname === link.href ? "text-primary after:scale-x-100" : ""
-              }`}
-            >
-              {link.label}
-            </Link>
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
+      <nav className="mx-auto max-w-5xl px-4 py-3 flex items-center gap-3">
+        <Link href="/" className="font-semibold tracking-tight mr-4">
+          Rohan Anand
+        </Link>
+
+        <ul className="flex items-center gap-2 text-sm">
+          {nav.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className={[
+                  "px-3 py-1.5 rounded-md transition",
+                  isActive(item.href)
+                    ? "bg-gray-900 text-white"
+                    : "hover:bg-gray-100",
+                ].join(" ")}
+              >
+                {item.name}
+              </Link>
+            </li>
           ))}
+        </ul>
+
+        <div className="ml-auto">
+          <a
+            href="/resume/download" // uses your force-download route
+            className="px-3 py-1.5 rounded-md border border-gray-300 hover:border-gray-400 text-sm transition"
+          >
+            Download Resume
+          </a>
         </div>
       </nav>
     </header>

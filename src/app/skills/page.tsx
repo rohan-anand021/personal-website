@@ -149,26 +149,28 @@ const SkillCard = ({
 export default function SkillsPage() {
   return (
     <section id="skills" className="my-12">
-      <div className="border-b pb-4 mb-10">
-        <h1 className="text-4xl font-bold">Tech Stack</h1>
-        <p className="mt-2 text-lg text-gray-600"></p>
-      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="border-b pb-4 mb-10">
+          <h1 className="text-4xl font-bold">Tech Stack</h1>
+          <p className="mt-2 text-lg text-gray-600"></p>
+        </div>
 
-      <div className="space-y-12">
-        {Object.entries(skills).map(([category, skillList]) => (
-          <div key={category}>
-            <h2 className="text-3xl font-bold mb-6">{category}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {skillList.map((skill) => (
-                <SkillCard
-                  key={skill.name}
-                  name={skill.name}
-                  description={skill.description}
-                />
-              ))}
+        <div className="space-y-12">
+          {Object.entries(skills).map(([category, skillList]) => (
+            <div key={category}>
+              <h2 className="text-3xl font-bold mb-6">{category}</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {skillList.map((skill) => (
+                  <SkillCard
+                    key={skill.name}
+                    name={skill.name}
+                    description={skill.description}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
